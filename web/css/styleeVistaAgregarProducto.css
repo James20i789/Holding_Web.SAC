@@ -1,0 +1,529 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --g900: #0d3b1e;
+  --g800: #1a4f29;
+  --g700: #1b5e20;
+  --g600: #2e7d32;
+  --g500: #388e3c;
+  --g400: #4caf50;
+  --g300: #81c784;
+  --g100: #e8f5e9;
+  --g50:  #f1f8f2;
+  --teal:    #00796b;
+  --orange:  #ef6c00;
+  --red:     #c62828;
+  --yellow:  #f9a825;
+  --purple:  #6a1b9a;
+  --dark:    #0f172a;
+  --mid:     #334155;
+  --muted:   #64748b;
+  --border:  #e2e8f0;
+  --white:   #ffffff;
+  --sidebar-w: 220px;
+  --navbar-h:  62px;
+  --ease: cubic-bezier(.4,0,.2,1);
+}
+
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+
+body {
+  font-family:'Poppins',sans-serif;
+  background: #edf2ee;
+  color: var(--dark);
+  min-height:100vh;
+}
+
+/* ── SCROLLBAR ─────────────────────────────────────────────────── */
+::-webkit-scrollbar { width:5px; height:5px; }
+::-webkit-scrollbar-thumb { background:#b2d8b5; border-radius:10px; }
+
+/* ── NAVBAR ────────────────────────────────────────────────────── */
+.navbar-batan {
+  background: var(--g700) !important;
+  height: var(--navbar-h);
+  padding: 0 1.5rem !important;
+  box-shadow: 0 2px 20px rgba(0,0,0,.25);
+  z-index: 1050;
+}
+.navbar-batan .navbar-brand {
+  color:#fff !important; font-weight:800; font-size:1.18rem;
+  letter-spacing:-.4px; display:flex; align-items:center; gap:.4rem;
+}
+.navbar-batan .navbar-brand i { font-size:1.4rem; }
+.navbar-batan .navbar-brand small { font-size:.7rem; opacity:.6; font-weight:400; }
+#userName { color:rgba(255,255,255,.8) !important; font-size:.84rem; }
+.navbar-batan .btn-outline-light {
+  border-radius:50px; font-size:.78rem; padding:.3rem .95rem;
+  border-color:rgba(255,255,255,.35);
+  transition:background .18s;
+}
+.navbar-batan .btn-outline-light:hover { background:rgba(255,255,255,.14); color:#fff; }
+
+/* ── LAYOUT SHELL ──────────────────────────────────────────────── */
+/* Neutralizar clases que el HTML reutiliza en el layout wrapper */
+.container-fluid.main-content {
+  background:transparent !important;
+  box-shadow:none !important;
+  border-radius:0 !important;
+  padding:0 !important;
+}
+.container-fluid.main-content > .row { min-height:calc(100vh - var(--navbar-h)); }
+
+/* ── SIDEBAR ───────────────────────────────────────────────────── */
+.sidebar {
+  width: var(--sidebar-w);
+  min-height: calc(100vh - var(--navbar-h));
+  background: var(--white);
+  border-right: 1.5px solid var(--border);
+  padding: 1.2rem .8rem !important;
+  position: sticky;
+  top: var(--navbar-h);
+  height: calc(100vh - var(--navbar-h));
+  overflow-y: auto;
+}
+.sidebar .nav-link {
+  color: var(--muted);
+  font-size: .84rem;
+  font-weight: 600;
+  padding: .6rem .9rem;
+  border-radius: 10px;
+  display: flex; align-items: center; gap: .55rem;
+  transition: all .18s var(--ease);
+  margin-bottom: .2rem;
+  text-decoration: none;
+}
+.sidebar .nav-link i { font-size:.95rem; flex-shrink:0; }
+.sidebar .nav-link:hover { background:var(--g100); color:var(--g700); }
+.sidebar .nav-link.active {
+  background: linear-gradient(135deg, var(--g700), var(--g500));
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(27,94,32,.32);
+}
+
+/* ── CONTENT COLUMN ────────────────────────────────────────────── */
+/* La col-lg-10 también tiene clase main-content — la neutralizamos aquí */
+.col-lg-10.main-content {
+  background: #edf2ee !important;
+  padding: 2rem 2.2rem !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+/* ── SECTION HEADERS ───────────────────────────────────────────── */
+.content-section > .d-flex h5,
+.content-section > h5 {
+  font-size:1.06rem; font-weight:800; color:var(--g700);
+  display:flex; align-items:center; gap:.45rem;
+}
+
+/* ── FILTER BAR ────────────────────────────────────────────────── */
+/* .card.border-0.shadow-sm targets both the filter card and categories card */
+.card.border-0.shadow-sm {
+  border-radius:14px !important;
+  border:1.5px solid var(--border) !important;
+  box-shadow:0 1px 6px rgba(0,0,0,.05) !important;
+  background:#fff !important;
+}
+.card.border-0.shadow-sm .card-body { padding:1rem 1.25rem !important; }
+
+.form-control, .form-control-sm, .form-select, .form-select-sm {
+  border-radius:8px !important;
+  border:1.5px solid var(--border) !important;
+  font-size:.83rem !important;
+  font-family:'Poppins',sans-serif;
+  padding:.38rem .8rem !important;
+  transition:border-color .18s, box-shadow .18s;
+  background:#fff;
+}
+.form-control:focus, .form-control-sm:focus,
+.form-select:focus, .form-select-sm:focus {
+  border-color:var(--g500) !important;
+  box-shadow:0 0 0 3px rgba(76,175,80,.14) !important;
+  outline:none;
+}
+
+/* ── BUTTONS ───────────────────────────────────────────────────── */
+.btn-primary {
+  background:var(--g700) !important;
+  border-color:var(--g700) !important;
+  border-radius:8px !important;
+  font-weight:700 !important;
+  font-size:.83rem !important;
+  font-family:'Poppins',sans-serif;
+}
+.btn-primary:hover {
+  background:var(--g600) !important;
+  border-color:var(--g600) !important;
+  transform:translateY(-1px);
+}
+.btn-secondary {
+  border-radius:8px !important;
+  font-size:.83rem !important;
+  font-family:'Poppins',sans-serif;
+}
+.btn-outline-danger {
+  border-radius:8px !important;
+  font-weight:700 !important;
+  font-size:.84rem !important;
+  font-family:'Poppins',sans-serif;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   PRODUCT GRID & CARDS
+   Compatibles exactamente con el innerHTML que genera renderProductos()
+   ══════════════════════════════════════════════════════════════════ */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px,1fr));
+  gap: 1.25rem;
+}
+
+/* La tarjeta base — el JS le añade shadow-sm, lo respetamos */
+.product-card {
+  background: var(--white) !important;
+  border-radius: 18px !important;
+  overflow: hidden;
+  border: 1.5px solid rgba(0,0,0,.06) !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,.07) !important;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform .24s var(--ease), box-shadow .24s var(--ease),
+              border-color .24s !important;
+  cursor: pointer;
+  animation: cardFadeIn .35s var(--ease) both;
+}
+.product-card:hover {
+  transform: translateY(-7px) !important;
+  box-shadow: 0 18px 48px rgba(27,94,32,.18) !important;
+  border-color: var(--g300) !important;
+}
+
+@keyframes cardFadeIn {
+  from { opacity:0; transform:translateY(16px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+/* ── IMAGEN ── el JS genera <img class="product-img"> directamente en .product-card */
+.product-card > img.product-img,
+.product-card > .product-img {
+  width: 100% !important;
+  height: 185px !important;
+  object-fit: cover !important;
+  display: block;
+  flex-shrink: 0;
+  border-radius: 0 !important;
+  transition: transform .35s var(--ease) !important;
+  cursor: zoom-in;
+}
+.product-card:hover > img.product-img,
+.product-card:hover > .product-img {
+  transform: scale(1.06) !important;
+}
+
+/* Gradient overlay en la imagen */
+.product-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 185px;
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(0,0,0,.28) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+  border-radius: 18px 18px 0 0;
+  opacity: 0;
+  transition: opacity .24s;
+}
+.product-card:hover::before { opacity: 1; }
+
+/* Icono zoom sobre imagen al hover */
+.product-card::after {
+  content: "\F52A";
+  font-family:"bootstrap-icons";
+  position: absolute;
+  top: 90px;
+  left: 50%;
+  transform: translate(-50%,-50%) scale(0);
+  background: rgba(255,255,255,.95);
+  color: var(--g700);
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+  transition: transform .22s var(--ease), opacity .22s;
+  opacity: 0;
+  z-index: 2;
+  pointer-events: none;
+  box-shadow: 0 4px 16px rgba(0,0,0,.2);
+}
+.product-card:hover::after {
+  transform: translate(-50%,-50%) scale(1);
+  opacity: 1;
+}
+
+/* ── PLACEHOLDER sin imagen ── */
+.product-img-placeholder {
+  width: 100% !important;
+  height: 185px !important;
+  background: linear-gradient(135deg, #e8f5e9, #c8e6c9) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: var(--g400) !important;
+  font-size: 2.8rem !important;
+  flex-shrink: 0 !important;
+  border-radius: 0 !important;
+}
+
+/* ── PRODUCT INFO ── */
+.product-info {
+  padding: .9rem 1rem 1rem !important;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+}
+.product-info h6 {
+  font-size: .92rem !important;
+  font-weight: 700 !important;
+  color: var(--dark) !important;
+  margin: 0 !important;
+  line-height: 1.35;
+}
+.product-info .badge {
+  font-size: .68rem !important;
+  font-weight: 700 !important;
+  padding: .3em .75em !important;
+  border-radius: 20px !important;
+  letter-spacing: .2px;
+  width: fit-content;
+}
+.product-info .price {
+  font-size: 1.12rem !important;
+  font-weight: 800 !important;
+  color: var(--g700) !important;
+  margin: .1rem 0 0 !important;
+  letter-spacing: -.3px;
+}
+.product-info .stock {
+  font-size: .75rem !important;
+  color: var(--muted) !important;
+  margin: 0 !important;
+}
+.product-info .stock.text-danger { color:var(--red) !important; font-weight:700 !important; }
+
+/* ── PRODUCT ACTIONS — botones editar/eliminar ── */
+.product-actions {
+  position: absolute !important;
+  top: 10px !important; right: 10px !important;
+  display: flex !important;
+  gap: 5px !important;
+  z-index: 10;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity .2s var(--ease), transform .2s var(--ease) !important;
+}
+.product-card:hover .product-actions {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+/* Anular cualquier otra regla de .product-actions button */
+.product-actions .btn,
+.product-actions button {
+  width: 34px !important; height: 34px !important;
+  border-radius: 10px !important;
+  padding: 0 !important;
+  display: flex !important; align-items: center !important; justify-content: center !important;
+  font-size: .8rem !important;
+  border: none !important;
+  box-shadow: 0 3px 10px rgba(0,0,0,.28) !important;
+  transition: transform .14s !important;
+  line-height: 1 !important;
+}
+.product-actions .btn:hover,
+.product-actions button:hover { transform: scale(1.14) !important; }
+
+.btn-warning, .product-actions .btn-warning {
+  background: var(--yellow) !important;
+  color: #000 !important;
+  border: none !important;
+}
+.btn-danger, .product-actions .btn-danger {
+  background: var(--red) !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+/* ══ STATS CARDS ════════════════════════════════════════════════ */
+.stats-card {
+  background: linear-gradient(135deg, var(--g800), var(--g500));
+  color: #fff;
+  border-radius: 16px;
+  padding: 1.5rem 1.6rem;
+  box-shadow: 0 6px 28px rgba(27,94,32,.28);
+  transition: transform .2s var(--ease), box-shadow .2s;
+  position: relative;
+  overflow: hidden;
+}
+.stats-card::before {
+  content:"";
+  position:absolute;
+  width:120px; height:120px;
+  border-radius:50%;
+  background:rgba(255,255,255,.07);
+  right:-30px; top:-30px;
+  pointer-events:none;
+}
+.stats-card:hover { transform:translateY(-4px); box-shadow:0 12px 36px rgba(0,0,0,.18); }
+.stats-card h3 { font-size:1.9rem; font-weight:800; margin-bottom:.3rem; color:#fff !important; }
+.stats-card p  { font-size:.8rem; opacity:.78; margin:0; }
+
+/* ══ VENTAS TABLE ═══════════════════════════════════════════════ */
+.table thead.table-light th {
+  font-size:.76rem; font-weight:700;
+  text-transform:uppercase; letter-spacing:.4px;
+  color:var(--muted);
+  background:var(--g50) !important;
+  border-bottom:2px solid var(--border) !important;
+  padding:.85rem 1rem !important;
+}
+.table td {
+  font-size:.83rem;
+  padding:.78rem 1rem !important;
+  vertical-align:middle;
+  border-color:var(--border) !important;
+}
+.table-hover tbody tr:hover > td { background:var(--g50) !important; }
+
+/* ══ CATEGORÍAS ═════════════════════════════════════════════════ */
+#categoriesList .col-md-4,
+#categoriesList .col-lg-3 { }
+
+#categoriesList .card {
+  border-radius:12px !important;
+  border:1.5px solid var(--border) !important;
+  box-shadow:0 1px 6px rgba(0,0,0,.05) !important;
+  transition:box-shadow .18s, transform .18s !important;
+  background:#fff !important;
+}
+#categoriesList .card:hover {
+  box-shadow:0 6px 24px rgba(0,0,0,.1) !important;
+  transform:translateY(-2px) !important;
+}
+#categoriesList .card .fw-medium { font-size:.88rem; color:var(--dark); }
+#categoriesList .btn-group .btn { border-radius:7px !important; }
+
+/* ══ MODALS ═════════════════════════════════════════════════════ */
+.modal-content {
+  border:none !important;
+  border-radius:18px !important;
+  box-shadow:0 20px 60px rgba(0,0,0,.18) !important;
+  overflow:hidden;
+  font-family:'Poppins',sans-serif;
+}
+.modal-header {
+  background:var(--g50) !important;
+  border-bottom:1.5px solid var(--border) !important;
+  padding:1rem 1.4rem !important;
+}
+.modal-header .modal-title, .modal-header h6 {
+  font-size:.95rem !important;
+  font-weight:800 !important;
+  color:var(--g700) !important;
+  display:flex; align-items:center; gap:.4rem;
+  margin:0;
+}
+.modal-footer {
+  background:var(--g50) !important;
+  border-top:1.5px solid var(--border) !important;
+  padding:.85rem 1.4rem !important;
+}
+.modal-body { padding:1.3rem 1.4rem !important; }
+.form-label.small.fw-semibold {
+  font-size:.76rem !important;
+  color:var(--mid);
+  margin-bottom:.3rem !important;
+  display:block;
+}
+#imagePreview img { border-radius:10px; border:2px solid var(--border); }
+
+/* ══ LIGHTBOX ═══════════════════════════════════════════════════ */
+#lightboxOverlay {
+  position:fixed; inset:0;
+  background:rgba(4,8,4,.93);
+  z-index:9999;
+  display:flex; align-items:center; justify-content:center;
+  opacity:0; pointer-events:none;
+  transition:opacity .28s var(--ease);
+  cursor:zoom-out;
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+}
+#lightboxOverlay.open { opacity:1; pointer-events:all; }
+#lightboxOverlay img {
+  max-width:88vw; max-height:86vh;
+  object-fit:contain;
+  border-radius:14px;
+  box-shadow:0 28px 80px rgba(0,0,0,.7);
+  transform:scale(.86);
+  transition:transform .32s var(--ease);
+  cursor:default;
+}
+#lightboxOverlay.open img { transform:scale(1); }
+#lightboxCaption {
+  position:fixed;
+  bottom:28px; left:50%;
+  transform:translateX(-50%);
+  background:rgba(0,0,0,.55);
+  color:#fff;
+  font-size:.85rem; font-weight:600;
+  padding:.42rem 1.1rem;
+  border-radius:50px;
+  backdrop-filter:blur(4px);
+  opacity:0; transition:opacity .28s .15s;
+  white-space:nowrap;
+  pointer-events:none;
+}
+#lightboxOverlay.open #lightboxCaption { opacity:1; }
+#lightboxClose {
+  position:fixed; top:18px; right:20px;
+  background:rgba(255,255,255,.12);
+  border:none; color:#fff;
+  width:42px; height:42px;
+  border-radius:50%;
+  font-size:1rem;
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer;
+  transition:background .18s;
+  backdrop-filter:blur(4px);
+  z-index:10001;
+}
+#lightboxClose:hover { background:rgba(255,255,255,.24); }
+
+/* ══ EMPTY STATE ════════════════════════════════════════════════ */
+.empty-state {
+  text-align:center; padding:4rem 1rem; color:var(--muted);
+}
+.empty-state i { font-size:3.5rem; opacity:.28; display:block; margin-bottom:.9rem; }
+.empty-state p { font-size:.9rem; }
+
+/* ══ RESPONSIVE ════════════════════════════════════════════════= */
+@media (max-width:991px) {
+  .col-lg-10.main-content { padding:1.3rem 1rem !important; }
+  .product-grid { grid-template-columns:repeat(auto-fill,minmax(175px,1fr)); gap:.9rem; }
+}
+@media (max-width:576px) {
+  .product-grid { grid-template-columns:repeat(2,1fr); gap:.65rem; }
+  .col-lg-10.main-content { padding:.85rem .7rem !important; }
+  .stats-card h3 { font-size:1.5rem; }
+  .product-card > img.product-img,
+  .product-card > .product-img,
+  .product-img-placeholder { height:140px !important; }
+  .product-card::before { height:140px; }
+  .product-card::after { top:70px; }
+}

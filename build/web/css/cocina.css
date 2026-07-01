@@ -1,0 +1,135 @@
+body {
+    background: #f3f4f6;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+}
+
+.cocina-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 18px;
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.cocina-header h4 {
+    margin: 0;
+    color: #059669;
+}
+
+.btn-salir {
+    background: #ef4444;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.row {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 12px;
+    padding: 12px;
+    height: calc(100vh - 60px);
+    overflow-x: auto;
+}
+
+.col {
+    flex: 1;
+    min-width: 320px;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 10px;
+    overflow-y: auto;
+    box-shadow: 0 2px 8px rgba(189, 79, 79, 0.05);
+}
+
+h5 {
+    font-size: 14px;
+    margin: 8px 0 12px;
+    text-align: center;
+}
+
+.card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 12px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.card strong {
+    font-size: 15px;
+    color: #059669;
+}
+
+small {
+    color: #6b7280;
+}
+
+
+button {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 12px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+
+.btn-prep { background: #10b981; color: white; }
+.btn-ok { background: #059669; color: white; }
+.btn-cancel { background: #6b7280; color: white; }
+
+
+.col::-webkit-scrollbar {
+    width: 6px;
+}
+
+.col::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 10px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .row {
+        flex-wrap: wrap;
+        height: auto;
+    }
+
+    .col {
+        min-width: 100%;
+    }
+}
+
+.btn-print{
+    background:#0ea5e9;
+    color:white;
+    border:none;
+    padding:6px 10px;
+    border-radius:8px;
+    font-size:12px;
+    cursor:pointer;
+}
+
+.btn-print:hover{
+    background:#0284c7;
+}
+
+/* mejorar layout bottom */
+.bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:8px;
+}

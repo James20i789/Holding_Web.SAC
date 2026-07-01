@@ -1,0 +1,310 @@
+:root {
+  --primary: #e67e22;
+  --primary-dark: #d35400;
+  --secondary: #2c3e50;
+  --bg: #fff9f5;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, var(--bg), #ffe8d9, #ffd4b8);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  padding: 10px;
+  overflow: hidden;
+}
+.text-center {
+  text-align: center;
+}
+.login-card {
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 10px 35px rgba(230, 126, 34, 0.2);
+  background: #fff;
+  max-width: 340px;
+  width: 100%;
+  animation: fadeIn 0.35s ease;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.card-header-custom {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  padding: 1rem;
+  text-align: center;
+  color: #fff;
+}
+.company-logo img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  background: #fff;
+  padding: 3px;
+  display: block;
+  margin: 0 auto 0.4rem;
+}
+.card-header-custom h1 {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0;
+  line-height: 1.2;
+}
+.card-header-custom .subtitle {
+  font-size: 0.8rem;
+  opacity: 0.95;
+  margin: 0.1rem 0 0;
+}
+.card-body {
+  padding: 1.1rem;
+}
+.welcome-text {
+  text-align: center;
+  margin-bottom: 0.8rem;
+  color: var(--secondary);
+}
+.welcome-text h4 {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.1rem;
+}
+.welcome-text p {
+  font-size: 0.8rem;
+}
+.form-label {
+  font-weight: 500;
+  color: var(--secondary);
+  margin-bottom: 0.25rem;
+  font-size: 0.85rem;
+}
+.form-control {
+  border-radius: 8px;
+  padding: 0.45rem 0.8rem;
+  border: 1.5px solid #e9ecef;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.2rem rgba(230, 126, 34, 0.12);
+}
+.input-group .btn {
+  padding: 0.45rem 0.65rem;
+  border-radius: 0 8px 8px 0;
+}
+.forgot-password {
+  text-align: right;
+  margin: 0.2rem 0 0.8rem;
+}
+.forgot-password a {
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 0.78rem;
+}
+.forgot-password a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+.btn-login {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border: none;
+  border-radius: 8px;
+  padding: 0.55rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  width: 100%;
+  color: #fff;
+  transition: all 0.2s;
+  box-shadow: 0 3px 12px rgba(230, 126, 34, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+}
+.btn-login:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);
+}
+.btn-login.loading .btn-text {
+  display: none;
+}
+.btn-login.loading .btn-loader {
+  display: inline-block;
+}
+.btn-login .btn-loader {
+  display: none;
+}
+.divider {
+  text-align: center;
+  margin: 0.7rem 0;
+  color: #adb5bd;
+  font-size: 0.75rem;
+  position: relative;
+}
+.divider::before,
+.divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background: #e9ecef;
+}
+.divider::before {
+  left: 0;
+}
+.divider::after {
+  right: 0;
+}
+.social-title {
+  text-align: center;
+  font-weight: 500;
+  color: var(--secondary);
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+}
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.social-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #e9ecef;
+  background: #fff;
+  transition: all 0.2s;
+  text-decoration: none;
+  color: inherit;
+  font-size: 1rem;
+}
+.social-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+.social-btn.whatsapp {
+  color: #25d366;
+  border-color: #25d36650;
+}
+.social-btn.whatsapp:hover {
+  background: #25d366;
+  color: #fff;
+  border-color: #25d366;
+}
+.social-btn.facebook {
+  color: #1877f2;
+  border-color: #1877f250;
+}
+.social-btn.facebook:hover {
+  background: #1877f2;
+  color: #fff;
+  border-color: #1877f2;
+}
+.social-btn.instagram {
+  color: #e4405f;
+  border-color: #e4405f50;
+}
+.social-btn.instagram:hover {
+  background: linear-gradient(
+    45deg,
+    #f09433,
+    #e6683c,
+    #dc2743,
+    #cc2366,
+    #bc1888
+  );
+  color: #fff;
+  border-color: transparent;
+}
+.agreement {
+  display: block;
+  text-align: center;
+  margin-top: 0.8rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid #f1f1f1;
+  font-size: 0.75rem;
+  color: #6c757d;
+}
+.agreement a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+.agreement a:hover {
+  text-decoration: underline;
+}
+#statusMessage {
+  min-height: 20px;
+  margin-top: 0.5rem;
+}
+.alert {
+  border-radius: 8px;
+  font-size: 0.8rem;
+  padding: 0.35rem 0.7rem;
+  margin: 0;
+}
+#recoverModal .modal-content {
+  border-radius: 14px;
+  border: none;
+}
+#recoverModal .modal-header {
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid #f1f1f1;
+}
+#recoverModal .modal-body {
+  padding: 0.8rem 1rem 1rem;
+}
+#recoverModal .modal-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+@media (max-height: 600px) {
+  body {
+    padding: 6px;
+  }
+  .card-body {
+    padding: 1rem;
+  }
+  .card-header-custom {
+    padding: 0.9rem;
+  }
+  .company-logo img {
+    width: 50px;
+    height: 50px;
+  }
+  .welcome-text {
+    margin-bottom: 0.6rem;
+  }
+  .mb-3 {
+    margin-bottom: 0.6rem !important;
+  }
+}
+@media (max-width: 360px) {
+  .login-card {
+    max-width: 100%;
+  }
+  .social-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 0.95rem;
+  }
+}

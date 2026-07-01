@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cocina en Vivo - EL BATÁN</title>
+  <link rel="stylesheet" href="../css/cocina.css"/>
+</head>
+<body>
+
+<div class="cocina-header">
+  <h4>🍽️ Cocina en Vivo</h4>
+  <button class="btn-salir" onclick="salir()">
+    <i style="margin-right:4px">🚪</i>Salir
+  </button>
+</div>
+
+<div class="row">
+  <div class="col">
+    <h5>🟠 Pendientes</h5>
+    <div id="colPendientes"></div>
+  </div>
+  <div class="col">
+    <h5>🔵 Preparación</h5>
+    <div id="colPreparacion"></div>
+  </div>
+  <div class="col">
+    <h5>🟢 Listos</h5>
+    <div id="colListos"></div>
+  </div>
+</div>
+
+<script src="/Holding_Web/js/cocina.js"></script>
+</body>
+</html>

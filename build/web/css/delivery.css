@@ -1,0 +1,20 @@
+.card-pedido {
+    border-radius: 15px;
+    transition: 0.2s;
+}
+
+.card-pedido:hover {
+    transform: scale(1.02);
+}
+
+.estado-nuevo {
+    background: #fff3cd;
+}
+
+.estado-aprobado {
+    background: #d1e7dd;
+}
+
+.btn-accion {
+    width: 48%;
+}

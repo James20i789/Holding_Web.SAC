@@ -1,0 +1,115 @@
+body {
+    background-color: #f0f2f5;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.navbar {
+    background: linear-gradient(90deg, #0d6efd 0%, #004dc7 100%) !important;
+}
+
+.btn-salir {
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.btn-salir:hover {
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+    color: white !important;
+    transform: translateY(-1px);
+}
+
+.product-card {
+    background: white;
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.product-img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.product-info {
+    padding: 10px;
+    text-align: center;
+}
+
+.product-info h6 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #2d3436;
+}
+
+.product-info .price {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #0d6efd;
+    margin-bottom: 0;
+}
+
+.product-info .stock {
+    font-size: 0.75rem;
+    color: #636e72;
+}
+
+/* --- ESTILOS DE LA COMANDA --- */
+.comanda-card {
+    position: sticky;
+    top: 20px;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+#listaComanda tr {
+    border-bottom: 1px solid #f8f9fa;
+}
+
+.btn-eliminar-item {
+    color: #ff7675;
+    transition: color 0.2s;
+}
+
+.btn-eliminar-item:hover {
+    color: #d63031;
+}
+
+.form-control, .form-select {
+    border: 1.5px solid #e0e6ed;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.form-control:focus, .form-select:focus {
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.1);
+    border-color: #0d6efd;
+}
+
+.btn-check:checked + .btn-outline-primary { background-color: #0d6efd; color: white; }
+.btn-check:checked + .btn-outline-info { background-color: #0dcaf0; color: white; border-color: #0dcaf0; }
+.btn-check:checked + .btn-outline-success { background-color: #198754; color: white; }
+.btn-check:checked + .btn-outline-dark { background-color: #212529; color: white; }
+
+.btn-outline-primary, .btn-outline-info, .btn-outline-success, .btn-outline-dark {
+    border-width: 1.5px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#listaProductos .col-6 {
+    animation: fadeIn 0.4s ease forwards;
+}
