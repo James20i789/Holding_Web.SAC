@@ -123,7 +123,7 @@ public class testConection {
 //        System.out.println("\n--- 9. Alerta de Stock Bajo (Umbral: 5 unidades) ---");
 //        List<Producto> stockBajo = dao.listarStockBajo(5);
 //        for (Producto p : stockBajo) {
-//            System.out.println("⚠️ ALERTA: " + p.getNombre() + " solo tiene " + p.getStock() + " unidades.");
+//            System.out.println(" ALERTA: " + p.getNombre() + " solo tiene " + p.getStock() + " unidades.");
 //        }
 //
 //        System.out.println("\n--- 10. Top 3 de Productos Más Vendidos ---");
