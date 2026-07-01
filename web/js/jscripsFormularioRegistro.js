@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
           this.classList.add("is-valid");
         }
       } catch (err) {
-        console.warn("No se pudo verificar correo:", err);
+        console.warn("NO SE LOGRÓ VERIFICAR EL CORREO:", err);
       }
     });
   }

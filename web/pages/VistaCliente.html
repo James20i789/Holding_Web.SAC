@@ -8,7 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="/Holding_Web/css/styleeVistaCliente.css"/>
+  <link rel="stylesheet" href="../css/styleeVistaCliente.css"/>
 </head>
 <body>
 
@@ -115,13 +115,13 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="/Holding_Web/js/jscripVistaCliente.js"></script>
+<script src="../js/jscripVistaCliente.js"></script>
 
 <!-- Función auxiliar de cerrar sesión accesible desde HTML -->
 <script>
   function cerrarSesion() {
-    fetch("/Holding_Web/api/logout").finally(() => {
-      window.location.href = "/Holding_Web/";
+    fetch("/Holding_Web.SAC/api/logout").finally(() => {
+      window.location.href = "/Holding_Web.SAC/";
     });
   }
 </script>

@@ -1,352 +1,351 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Admin - EL BATÁN</title>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Admin - EL BATÁN</title>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="../css/styleeVistaAgregarProducto.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"/>
+        <link rel="stylesheet" href="../css/styleeVistaAgregarProducto.css"/>
 
-  <style>
-    /* Imagen de producto sin foto */
-    .product-img-placeholder {
-      width: 120px;
-      height: 90px;
-      background: #e9ecef;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #adb5bd;
-      font-size: 2rem;
-      flex-shrink: 0;
-      border-radius: 6px;
-    }
-    .product-img {
-      width: 120px;
-      height: 90px;
-      object-fit: cover;
-      border-radius: 6px;
-      flex-shrink: 0;
-    }
-  </style>
-</head>
-<body>
+        <style>
+            /* Imagen de producto sin foto */
+            .product-img-placeholder {
+                width: 120px;
+                height: 90px;
+                background: #e9ecef;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #adb5bd;
+                font-size: 2rem;
+                flex-shrink: 0;
+                border-radius: 6px;
+            }
+            .product-img {
+                width: 120px;
+                height: 90px;
+                object-fit: cover;
+                border-radius: 6px;
+                flex-shrink: 0;
+            }
+        </style>
+    </head>
+    <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-batan sticky-top">
-  <div class="container-fluid main-content">
-    <a class="navbar-brand" href="#">
-      <i class="bi bi-cpu me-2"></i>EL BATÁN
-      <small class="fw-normal opacity-75">| Admin</small>
-    </a>
-    <button class="navbar-toggler" type="button"
-            data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto align-items-center">
-        <li class="nav-item">
-          <span class="nav-link text-white" id="userName">Cargando...</span>
-        </li>
-        <li class="nav-item">
-          <button class="btn btn-sm btn-outline-light ms-2"
-                  onclick="cerrarSesion()">
-            <i class="bi bi-box-arrow-left me-1"></i>Salir
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- Layout principal -->
-<div class="container-fluid main-content">
-  <div class="row">
-
-    <!-- Sidebar -->
-    <div class="col-lg-2 sidebar d-none d-lg-block">
-      <nav class="nav flex-column pt-3">
-        <a class="nav-link active" href="#" data-section="productos">
-          <i class="bi bi-grid me-2"></i>Productos
-        </a>
-        <a class="nav-link" href="#" data-section="categorias">
-          <i class="bi bi-tags me-2"></i>Categorías
-        </a>
-        <a class="nav-link" href="#" data-section="ventas">
-          <i class="bi bi-cart-check me-2"></i>Ventas
-        </a>
-        <a class="nav-link" href="#" data-section="estadisticas">
-          <i class="bi bi-bar-chart me-2"></i>Estadísticas
-        </a>
-        <a class="nav-link" href="#" data-section="configuracion">
-          <i class="bi bi-gear me-2"></i>Configuración
-        </a>
-      </nav>
-    </div>
-
-    <!-- Contenido principal -->
-    <div class="col-lg-10 main-content py-3">
-
-      <!-- ── PRODUCTOS ── -->
-      <div id="section-productos" class="content-section">
-        <div class="d-flex justify-content-between align-items-center mb-4">
-          <h5 class="mb-0">
-            <i class="bi bi-grid me-2"></i>Gestión de Productos
-          </h5>
-          <button class="btn btn-primary" onclick="nuevoProducto()">
-            <i class="bi bi-plus-lg me-1"></i>Nuevo Producto
-          </button>
-        </div>
-
-        <!-- Filtros -->
-        <div class="card border-0 shadow-sm mb-4">
-          <div class="card-body py-3">
-            <div class="row g-2 align-items-center">
-              <div class="col-md-4">
-                <input type="text" class="form-control form-control-sm"
-                       id="searchProduct" placeholder="🔍 Buscar producto..."/>
-              </div>
-              <div class="col-md-3">
-                <select class="form-select form-select-sm" id="filterCategory">
-                  <option value="">Todas las categorías</option>
-                </select>
-              </div>
-              <div class="col-md-2">
-                <select class="form-select form-select-sm" id="sortProducts">
-                  <option value="nombre">Nombre</option>
-                  <option value="precio-asc">Precio: Menor a Mayor</option>
-                  <option value="precio-desc">Precio: Mayor a Menor</option>
-                </select>
-              </div>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-batan sticky-top">
+            <div class="container-fluid main-content">
+                <a class="navbar-brand" href="#">
+                    <i class="bi bi-cpu me-2"></i>EL BATÁN
+                    <small class="fw-normal opacity-75">| Admin</small>
+                </a>
+                <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-center">
+                        <li class="nav-item">
+                            <span class="nav-link text-white" id="userName">Cargando...</span>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn btn-sm btn-outline-light ms-2"
+                                    onclick="cerrarSesion()">
+                                <i class="bi bi-box-arrow-left me-1"></i>Salir
+                            </button>
+                        </li>
+                    </ul>
+                </div>
             </div>
-          </div>
-        </div>
+        </nav>
 
-        <div id="productsList" class="product-grid"></div>
-        <div id="emptyProducts" class="empty-state d-none">
-          <i class="bi bi-basket fs-1"></i>
-          <p>No hay productos registrados</p>
-          <button class="btn btn-primary btn-sm mt-2"
-                  onclick="nuevoProducto()">+ Agregar primero</button>
-        </div>
-      </div>
+        <!-- Layout principal -->
+        <div class="container-fluid main-content">
+            <div class="row">
 
-      <!-- ── CATEGORÍAS ── -->
-      <div id="section-categorias" class="content-section d-none">
-        <div class="d-flex justify-content-between align-items-center mb-4">
-          <h5 class="mb-0"><i class="bi bi-tags me-2"></i>Categorías</h5>
-          <button class="btn btn-primary btn-sm"
-                  data-bs-toggle="modal" data-bs-target="#modalCategoria"
-                  onclick="document.getElementById('categoriaId').value='';">
-            <i class="bi bi-plus-lg me-1"></i>Nueva Categoría
-          </button>
-        </div>
-        <div class="card border-0 shadow-sm">
-          <div class="card-body">
-            <div id="categoriesList" class="row g-3"></div>
-            <div id="emptyCategories" class="empty-state py-4 d-none">
-              <i class="bi bi-tags fs-1"></i>
-              <p>No hay categorías creadas</p>
+                <!-- Sidebar -->
+                <div class="col-lg-2 sidebar d-none d-lg-block">
+                    <nav class="nav flex-column pt-3">
+                        <a class="nav-link active" href="#" data-section="productos">
+                            <i class="bi bi-grid me-2"></i>Productos
+                        </a>
+                        <a class="nav-link" href="#" data-section="categorias">
+                            <i class="bi bi-tags me-2"></i>Categorías
+                        </a>
+                        <a class="nav-link" href="#" data-section="ventas">
+                            <i class="bi bi-cart-check me-2"></i>Ventas
+                        </a>
+                        <a class="nav-link" href="#" data-section="estadisticas">
+                            <i class="bi bi-bar-chart me-2"></i>Estadísticas
+                        </a>
+                        <a class="nav-link" href="#" data-section="configuracion">
+                            <i class="bi bi-gear me-2"></i>Configuración
+                        </a>
+                    </nav>
+                </div>
+
+                <!-- Contenido principal -->
+                <div class="col-lg-10 main-content py-3">
+
+                    <!-- ── PRODUCTOS ── -->
+                    <div id="section-productos" class="content-section">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h5 class="mb-0">
+                                <i class="bi bi-grid me-2"></i>Gestión de Productos
+                            </h5>
+                            <button class="btn btn-primary" onclick="nuevoProducto()">
+                                <i class="bi bi-plus-lg me-1"></i>Nuevo Producto
+                            </button>
+                        </div>
+
+                        <!-- Filtros -->
+                        <div class="card border-0 shadow-sm mb-4">
+                            <div class="card-body py-3">
+                                <div class="row g-2 align-items-center">
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control form-control-sm"
+                                               id="searchProduct" placeholder="🔍 Buscar producto..."/>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <select class="form-select form-select-sm" id="filterCategory">
+                                            <option value="">Todas las categorías</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <select class="form-select form-select-sm" id="sortProducts">
+                                            <option value="nombre">Nombre</option>
+                                            <option value="precio-asc">Precio: Menor a Mayor</option>
+                                            <option value="precio-desc">Precio: Mayor a Menor</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="productsList" class="product-grid"></div>
+                        <div id="emptyProducts" class="empty-state d-none">
+                            <i class="bi bi-basket fs-1"></i>
+                            <p>No hay productos registrados</p>
+                            <button class="btn btn-primary btn-sm mt-2"
+                                    onclick="nuevoProducto()">+ Agregar primero</button>
+                        </div>
+                    </div>
+
+                    <!-- ── CATEGORÍAS ── -->
+                    <div id="section-categorias" class="content-section d-none">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h5 class="mb-0"><i class="bi bi-tags me-2"></i>Categorías</h5>
+                            <button class="btn btn-primary btn-sm"
+                                    data-bs-toggle="modal" data-bs-target="#modalCategoria"
+                                    onclick="document.getElementById('categoriaId').value = '';">
+                                <i class="bi bi-plus-lg me-1"></i>Nueva Categoría
+                            </button>
+                        </div>
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body">
+                                <div id="categoriesList" class="row g-3"></div>
+                                <div id="emptyCategories" class="empty-state py-4 d-none">
+                                    <i class="bi bi-tags fs-1"></i>
+                                    <p>No hay categorías creadas</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ── VENTAS ── -->
+                    <div id="section-ventas" class="content-section d-none">
+                        <h5 class="mb-4">
+                            <i class="bi bi-cart-check me-2"></i>Historial de Ventas
+                        </h5>
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-hover align-middle mb-0">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th class="ps-3">Fecha</th>
+                                                <th>Cliente</th>
+                                                <th>Detalle</th>
+                                                <th class="pe-3">Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="ventasList"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ── ESTADÍSTICAS ── -->
+                    <div id="section-estadisticas" class="content-section d-none">
+                        <h5 class="mb-4">
+                            <i class="bi bi-bar-chart me-2"></i>Estadísticas
+                        </h5>
+                        <div class="row g-3">
+                            <div class="col-md-3">
+                                <div class="stats-card">
+                                    <h3 id="statProductos">0</h3>
+                                    <p>Productos totales</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="stats-card"
+                                     style="background:linear-gradient(135deg,#27ae60,#2ecc71)">
+                                    <h3 id="statCategorias">0</h3>
+                                    <p>Categorías</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="stats-card"
+                                     style="background:linear-gradient(135deg,#e67e22,#f39c12)">
+                                    <h3 id="statIngresosVentas">S/ 0.00</h3>
+                                    <p>Ventas Realizadas</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="stats-card"
+                                     style="background:linear-gradient(135deg,#8e44ad,#9b59b6)">
+                                    <h3 id="statValor">S/ 0</h3>
+                                    <p>Valor inventario</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ── CONFIGURACIÓN ── -->
+                    <div id="section-configuracion" class="content-section d-none">
+                        <h5 class="mb-4">
+                            <i class="bi bi-gear me-2"></i>Configuración
+                        </h5>
+                        <div class="card border-0 shadow-sm" style="max-width:500px">
+                            <div class="card-body">
+                                <button class="btn btn-outline-danger w-100"
+                                        onclick="resetearSistema()">
+                                    <i class="bi bi-trash me-2"></i>Resetear sistema
+                                </button>
+                                <small class="text-muted d-block mt-2">
+                                    Atención: contacta al administrador de base de datos para
+                                    operaciones irreversibles.
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> <!-- /col-lg-10 -->
             </div>
-          </div>
         </div>
-      </div>
 
-      <!-- ── VENTAS ── -->
-      <div id="section-ventas" class="content-section d-none">
-        <h5 class="mb-4">
-          <i class="bi bi-cart-check me-2"></i>Historial de Ventas
-        </h5>
-        <div class="card border-0 shadow-sm">
-          <div class="card-body p-0">
-            <div class="table-responsive">
-              <table class="table table-hover align-middle mb-0">
-                <thead class="table-light">
-                  <tr>
-                    <th class="ps-3">Fecha</th>
-                    <th>Cliente</th>
-                    <th>Detalle</th>
-                    <th class="pe-3">Total</th>
-                  </tr>
-                </thead>
-                <tbody id="ventasList"></tbody>
-              </table>
+        <!-- ─────────────── MODAL PRODUCTO ─────────────── -->
+        <div class="modal fade" id="modalProducto" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h6 class="modal-title">
+                            <i class="bi bi-plus-circle me-2"></i>
+                            <span id="modalProductoTitle">Nuevo Producto</span>
+                        </h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="formProducto"> <!-- Manejo automático - FormData -->
+                            <input type="hidden" id="productId"/>
+                            <div class="mb-3">
+                                <label class="form-label small fw-semibold">Nombre del producto *</label>
+                                <input type="text" class="form-control form-control-sm"
+                                       id="prodNombre" placeholder="Ej: Pollo a la Brasa Entero"/>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label small fw-semibold">Categoría *</label>
+                                <select class="form-select form-select-sm" id="prodCategoria">
+                                    <option value="">Seleccionar...</option>
+                                </select>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 mb-3">
+                                    <label class="form-label small fw-semibold">Precio (S/) *</label>
+                                    <input type="number" class="form-control form-control-sm"
+                                           id="prodPrecio" step="0.01" min="0" placeholder="0.00"/>
+                                </div>
+                                <div class="col-6 mb-3">
+                                    <label class="form-label small fw-semibold">Stock</label>
+                                    <input type="number" class="form-control form-control-sm"
+                                           id="prodStock" min="0" value="0"/>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label small fw-semibold">Descripción</label>
+                                <textarea class="form-control form-control-sm"
+                                          id="prodDescripcion" rows="2"
+                                          placeholder="Descripción opcional del producto"></textarea>
+                            </div>
+                            <div class="mb-2">
+                                <label class="form-label small fw-semibold">Imagen (URL)</label>
+                                <input type="url" class="form-control form-control-sm mb-2"
+                                       id="prodImagen" placeholder="https://ejemplo.com/imagen.jpg"/>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label small fw-semibold">O subir archivo de imagen</label>
+                                <input type="file" class="form-control form-control-sm"
+                                       id="prodImagenFile" accept="image/*"/>
+                            </div>
+                            <!-- Preview: NO tiene onerror con noimage.png -->
+                            <div id="imagePreview" class="text-center d-none mb-2">
+                                <img id="previewImg" class="img-thumbnail" style="max-width:150px; max-height:120px; object-fit:cover;"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-sm"
+                                data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary btn-sm"
+                                onclick="guardarProducto()">
+                            <i class="bi bi-floppy me-1"></i>Guardar
+                        </button>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
 
-      <!-- ── ESTADÍSTICAS ── -->
-      <div id="section-estadisticas" class="content-section d-none">
-        <h5 class="mb-4">
-          <i class="bi bi-bar-chart me-2"></i>Estadísticas
-        </h5>
-        <div class="row g-3">
-          <div class="col-md-3">
-            <div class="stats-card">
-              <h3 id="statProductos">0</h3>
-              <p>Productos totales</p>
+        <!-- ─────────────── MODAL CATEGORÍA ─────────────── -->
+        <div class="modal fade" id="modalCategoria" tabindex="-1">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h6 class="modal-title">
+                            <span id="modalCategoriaTitle">Nueva Categoría</span>
+                        </h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" id="categoriaId"/>
+                        <div class="mb-3">
+                            <label class="form-label small fw-semibold">Nombre *</label>
+                            <input type="text" class="form-control form-control-sm"
+                                   id="catNombre" placeholder="Ej: Pollos a la Brasa"/>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label small fw-semibold">Color representativo</label>
+                            <input type="color" class="form-control form-control-sm form-control-color"
+                                   id="catColor" value="#e67e22"/>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-sm"
+                                data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary btn-sm"
+                                onclick="guardarCategoria()">
+                            <i class="bi bi-floppy me-1"></i>Guardar
+                        </button>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="col-md-3">
-            <div class="stats-card"
-                 style="background:linear-gradient(135deg,#27ae60,#2ecc71)">
-              <h3 id="statCategorias">0</h3>
-              <p>Categorías</p>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="stats-card"
-                 style="background:linear-gradient(135deg,#e67e22,#f39c12)">
-              <h3 id="statIngresosVentas">S/ 0.00</h3>
-              <p>Ventas Realizadas</p>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="stats-card"
-                 style="background:linear-gradient(135deg,#8e44ad,#9b59b6)">
-              <h3 id="statValor">S/ 0</h3>
-              <p>Valor inventario</p>
-            </div>
-          </div>
         </div>
-      </div>
 
-      <!-- ── CONFIGURACIÓN ── -->
-      <div id="section-configuracion" class="content-section d-none">
-        <h5 class="mb-4">
-          <i class="bi bi-gear me-2"></i>Configuración
-        </h5>
-        <div class="card border-0 shadow-sm" style="max-width:500px">
-          <div class="card-body">
-            <button class="btn btn-outline-danger w-100"
-                    onclick="resetearSistema()">
-              <i class="bi bi-trash me-2"></i>Resetear sistema
-            </button>
-            <small class="text-muted d-block mt-2">
-              Atención: contacta al administrador de base de datos para
-              operaciones irreversibles.
-            </small>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- /col-lg-10 -->
-  </div><!-- /row -->
-</div><!-- /container-fluid -->
-
-<!-- ─────────────── MODAL PRODUCTO ─────────────── -->
-<div class="modal fade" id="modalProducto" tabindex="-1">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h6 class="modal-title">
-          <i class="bi bi-plus-circle me-2"></i>
-          <span id="modalProductoTitle">Nuevo Producto</span>
-        </h6>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <!-- SIN enctype aquí; FormData lo maneja automáticamente -->
-        <div id="formProducto">
-          <input type="hidden" id="productId"/>
-          <div class="mb-3">
-            <label class="form-label small fw-semibold">Nombre del producto *</label>
-            <input type="text" class="form-control form-control-sm"
-                   id="prodNombre" placeholder="Ej: Pollo a la Brasa Entero"/>
-          </div>
-          <div class="mb-3">
-            <label class="form-label small fw-semibold">Categoría *</label>
-            <select class="form-select form-select-sm" id="prodCategoria">
-              <option value="">Seleccionar...</option>
-            </select>
-          </div>
-          <div class="row">
-            <div class="col-6 mb-3">
-              <label class="form-label small fw-semibold">Precio (S/) *</label>
-              <input type="number" class="form-control form-control-sm"
-                     id="prodPrecio" step="0.01" min="0" placeholder="0.00"/>
-            </div>
-            <div class="col-6 mb-3">
-              <label class="form-label small fw-semibold">Stock</label>
-              <input type="number" class="form-control form-control-sm"
-                     id="prodStock" min="0" value="0"/>
-            </div>
-          </div>
-          <div class="mb-3">
-            <label class="form-label small fw-semibold">Descripción</label>
-            <textarea class="form-control form-control-sm"
-                      id="prodDescripcion" rows="2"
-                      placeholder="Descripción opcional del producto"></textarea>
-          </div>
-          <div class="mb-2">
-            <label class="form-label small fw-semibold">Imagen (URL)</label>
-            <input type="url" class="form-control form-control-sm mb-2"
-                   id="prodImagen" placeholder="https://ejemplo.com/imagen.jpg"/>
-          </div>
-          <div class="mb-3">
-            <label class="form-label small fw-semibold">O subir archivo de imagen</label>
-            <input type="file" class="form-control form-control-sm"
-                   id="prodImagenFile" accept="image/*"/>
-          </div>
-          <!-- Preview: NO tiene onerror con noimage.png -->
-          <div id="imagePreview" class="text-center d-none mb-2">
-            <img id="previewImg" class="img-thumbnail" style="max-width:150px; max-height:120px; object-fit:cover;"/>
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary btn-sm"
-                data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary btn-sm"
-                onclick="guardarProducto()">
-          <i class="bi bi-floppy me-1"></i>Guardar
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ─────────────── MODAL CATEGORÍA ─────────────── -->
-<div class="modal fade" id="modalCategoria" tabindex="-1">
-  <div class="modal-dialog modal-sm">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h6 class="modal-title">
-          <span id="modalCategoriaTitle">Nueva Categoría</span>
-        </h6>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <input type="hidden" id="categoriaId"/>
-        <div class="mb-3">
-          <label class="form-label small fw-semibold">Nombre *</label>
-          <input type="text" class="form-control form-control-sm"
-                 id="catNombre" placeholder="Ej: Pollos a la Brasa"/>
-        </div>
-        <div class="mb-3">
-          <label class="form-label small fw-semibold">Color representativo</label>
-          <input type="color" class="form-control form-control-sm form-control-color"
-                 id="catColor" value="#e67e22"/>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary btn-sm"
-                data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary btn-sm"
-                onclick="guardarCategoria()">
-          <i class="bi bi-floppy me-1"></i>Guardar
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="/Holding_Web/js/jscripVistaAgregarProducto.js"></script>
-</body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="../js/jscripVistaAgregarProducto.js"></script>
+    </body>
 </html>
