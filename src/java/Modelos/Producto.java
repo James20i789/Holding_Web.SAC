@@ -6,7 +6,7 @@ package Modelos;
 
 /**
  *
- * @author HP
+ * @author ElBatan
  */
 public class Producto {
   private int idProducto;

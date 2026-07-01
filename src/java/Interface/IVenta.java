@@ -10,7 +10,7 @@ import java.util.Map;
 
 /**
  *
- * @author HP
+ * @author ElBatan
  */
 public interface IVenta {
     boolean registrarVenta(Venta venta);

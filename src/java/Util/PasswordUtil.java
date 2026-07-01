@@ -9,7 +9,7 @@ import java.security.NoSuchAlgorithmException;
 
 /**
  *
- * @author HP
+ * @author ElBatan
  */
 public class PasswordUtil {
      public static String hashSHA256(String textoPlano) {

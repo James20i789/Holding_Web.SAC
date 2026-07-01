@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 /**
  *
- * @author HP
+ * @author ElBatan
  */
 public class ProductoImpl implements IProducto {
  

@@ -6,7 +6,7 @@ package Interface;
 
 /**
  *
- * @author HP
+ * @author ElBatan
  */
 import Modelos.Producto;
 import java.util.List;

@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  *
- * @author HP
+ * @author ElBatan
  */
 public interface IResena {
     boolean registrar(Resena resena);

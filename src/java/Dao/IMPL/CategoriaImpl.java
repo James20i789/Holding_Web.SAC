@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  *
- * @author HP
+ * @author ElBatan
  */
 public class CategoriaImpl implements ICategoria {
  

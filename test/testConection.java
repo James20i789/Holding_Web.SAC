@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import java.util.List;
 /**
  *
- * @author HP
+ * @author ElBatan
  */
 public class testConection {
  public static void main(String[] args) {

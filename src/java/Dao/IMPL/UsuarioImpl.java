@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 /**
  *
- * @author HP
+ * @author ElBatan
  */
 public class UsuarioImpl implements IUsuario {
  

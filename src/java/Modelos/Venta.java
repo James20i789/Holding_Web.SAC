@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  *
- * @author HP
+ * @author ElBatan
  */
 public class Venta {
  

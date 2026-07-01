@@ -8,7 +8,7 @@ import Modelos.Cupon;
 
 /**
  *
- * @author HP
+ * @author ElBatan
  */
 public interface ICupon {
     Cupon validarCupon(String codigo);
