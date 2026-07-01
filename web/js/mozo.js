@@ -8,7 +8,7 @@
    PUT  /Holding_Web/api/ventas?id=&estado=       (cambiar estado)
    ================================================================ */
 
-const BASE = "/Holding_Web";
+const BASE = "/Holding_Web.SAC";
 
 let productos  = [];
 let categorias = [];

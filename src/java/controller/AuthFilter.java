@@ -13,10 +13,6 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
-/**
- * Filtro de seguridad: si no hay sesión activa redirige al login.
- * Las rutas /api/* retornan JSON 401 en lugar de redirigir.
- */
 @WebFilter(urlPatterns = {"/pages/*", "/api/*"})
 public class AuthFilter implements Filter {
 
@@ -58,16 +54,15 @@ public class AuthFilter implements Filter {
                 resp.setContentType("application/json;charset=UTF-8");
                 resp.setStatus(401);
                 resp.getWriter().print("{\"ok\":false,\"mensaje\":\"No autenticado\","
-                        + "\"redirect\":\"../pages/index.html\"}");
+                        + "\"redirect\":\"../pages/index_1.html\"}");
             } else {
-                resp.sendRedirect(req.getContextPath() + "/pages/index.html");
+                resp.sendRedirect(req.getContextPath() + "/pages/index_1.html");
             }
             return;
         }
 
-        // Verificar permisos por rol para rutas de API sensibles
         if (path.startsWith("/api/ventas") && "POST".equals(req.getMethod())) {
-            // Solo mozo, admin o cliente autenticado puede registrar ventas
+            // REGISTRO AUTENTICADO SOLO PARA ADMINISTRATIVO Y MOZO.
             String rol = usuario.getNombreRol().toLowerCase();
             if (!rol.equals("admin") && !rol.equals("mozo") && !rol.equals("cliente")) {
                 resp.setContentType("application/json;charset=UTF-8");
